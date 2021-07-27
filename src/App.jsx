@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from './components/Header/Header'
-//import AddToDo from './components/AddToDo/AddToDo'
+import AddToDo from './components/AddToDo/AddToDo'
 import ToDoList from './components/ToDoList/Todolist'
 
 function App() {
@@ -13,12 +13,12 @@ function App() {
   },
   {
     id: 2,
-    title: 'first todo',
+    title: 'second todo',
     status: true
   },
   {
     id: 3,
-    title: 'first todo',
+    title: 'three todo',
     status: true
   },
 
@@ -28,7 +28,7 @@ function App() {
     
     <div className="content">
       <Header />
-      
+      <AddToDo todo={todo} setTodo={setTodo}/>
       <ToDoList todo={todo} setTodo={setTodo} />
       
     </div>
