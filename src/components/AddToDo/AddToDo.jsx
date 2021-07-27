@@ -16,7 +16,7 @@ function AddToDo({todo, setTodo}) {
         setValue('')
     }
     return (
-        <div>
+        <div className="addItem">
             <input placeholder="Введите задачу" value={value} onChange={(e) =>
                 setValue(e.target.value)
             }/>

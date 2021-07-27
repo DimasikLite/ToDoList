@@ -3,6 +3,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(34, 34, 34);
 }
 
 code {
@@ -44,4 +45,34 @@ ul {
 
 li {
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(163, 218, 250, 0.479);
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0;
+    color: white;
+}
+
+input {
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    appearance: none;
+    transition: .5s;
+    margin-right: 20px;
+    background-color: transparent;
+    border-bottom: 1px solid red;
+    color: white;
+}
+
+input:focus,
+input:focus-visible {
+    outline: none;
+    transform: scale(0.95);
+}
+
+.addItem {
+    display: flex;
+    justify-content: flex-end;
 }
