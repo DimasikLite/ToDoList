@@ -9,7 +9,7 @@ function App() {
   {
     id: 1,
     title: 'first todo',
-    status: true
+    status: false
   },
   {
     id: 2,

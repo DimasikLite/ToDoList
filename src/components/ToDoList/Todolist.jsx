@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import s from './TodoStyle.css'
 
 
 
@@ -11,17 +11,18 @@ function ToDoList ({todo, setTodo}) {
         setTodo([...todo].filter(item => item.id!==id))
     }
     function closeToDo(id) {
-        let newToDo = [...todo].filter(item => {
-           if (item.id == id) {
+        setTodo([...todo].filter(item => {
+           if (item.id === id) {
                item.status = !item.status
            }
-           console.log(todo)
-        })
+           return item
+           
+        }))
     }
 
     function saveTodo(id) {
         let newTodo = ([...todo].map(item => {
-            if (item.id==id) {
+            if (item.id===id) {
                 item.title = value
             }
             return item
@@ -34,26 +35,26 @@ function ToDoList ({todo, setTodo}) {
         setEdit(id)
         setValue(title)
     }
-    console.log(todo)
+
     return (
         <ul>
             {
                 todo.map( item => (
                     <li key={item.id}>
                         {
-                            edit == item.id ? 
+                            edit === item.id ? 
                             <div>
                                 <input value={value} onChange={(e) => setValue(e.target.value)}/>
                             </div> : 
-                            <span>{item.title}</span>
+                            <span className={ item.status === false  ? 'close' : ''  }>{item.title}</span>
                         }
                         {
-                            edit == item.id ? 
+                            edit === item.id ? 
                             <div>
                                 <button onClick={()=>saveTodo(item.id)}>Сохранить</button>
                             </div> : 
                             <div>
-<button onClick={ ()=>deleteToDo(item.id)}>Удалить</button>
+                            <button onClick={ ()=>deleteToDo(item.id)}>Удалить</button>
                             <button onClick={ ()=>closeToDo(item.id)}>Закрыть</button>
                             <button onClick={ ()=>editToDo(item.id, item.title)}>Редактировать</button>
                             </div>
